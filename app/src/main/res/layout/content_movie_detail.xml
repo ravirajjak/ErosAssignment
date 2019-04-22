@@ -1,0 +1,30 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movies"
+            type="com.example.sampleapplication.bean.ResultsBean" />
+
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".activity.MovieDetailActivity"
+        tools:showIn="@layout/activity_movie_detail">
+
+        <TextView
+            android:id="@+id/cont_movie_tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@{movies.overview}"
+            android:textColor="@color/colorPrimaryDark" />
+
+
+    </android.support.v4.widget.NestedScrollView>
+</layout>

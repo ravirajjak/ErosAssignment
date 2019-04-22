@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movies"
+            type="com.example.sampleapplication.bean.ResultsBean" />
+
+    </data>
+
+    <android.support.v7.widget.CardView
+
+        android:layout_width="135dp"
+        android:layout_height="180dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <ImageView
+            android:id="@+id/row_movie_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            bind:imageUrl="@{movies.imageUrl}" />
+
+        <ImageView
+            android:id="@+id/row_movie_favourite"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@{movies.favourite? @drawable/ic_heart_selected :@drawable/ic_heart }" />
+    </android.support.v7.widget.CardView>
+</layout>
